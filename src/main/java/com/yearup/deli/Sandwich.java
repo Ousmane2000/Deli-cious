@@ -4,8 +4,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Sandwich extends Item {
-    private int size_sandwich;
-    private String type_of_bread;
+    private int sizeSandwich;
+    private String typeOfBread;
     private double price_sandwich;
     private String meat_topping;
     private String cheese_topping;
