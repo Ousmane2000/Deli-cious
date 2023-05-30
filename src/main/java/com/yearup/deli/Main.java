@@ -165,13 +165,13 @@ public class Main {
                     break;
             }
 
-            String input = scanner.nextLine().trim();
+            String input1 = scanner.nextLine().trim();
 
-            if (input.equals("4 inch")) {
+            if (input1.equals("4 inch")) {
                 System.out.println("Price: +$1.00");
-            } else if (input.equals("8inch")) {
+            } else if (input1.equals("8inch")) {
                 System.out.println("Price: +$2.00");
-            } else if (input.equals("12inch")) {
+            } else if (input1.equals("12inch")) {
                 System.out.println("Price: +$3.00");
             }
 

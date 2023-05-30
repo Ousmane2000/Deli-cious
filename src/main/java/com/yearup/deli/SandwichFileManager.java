@@ -48,7 +48,7 @@ public class SandwichFileManager {
                     writer.write("---Chips: ");
                     writer.write(((Chips)item).getName());
                 }
-                total += item.getPrice();
+                total += item.calculatePrice();
             }
             writer.write("Total is: " + total );
             writer.close();
