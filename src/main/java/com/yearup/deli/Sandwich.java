@@ -3,7 +3,7 @@ package com.yearup.deli;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Sandwich {
+public class Sandwich extends Item {
     private int size_sandwich;
     private String type_of_bread;
     private double price_sandwich;
@@ -14,4 +14,8 @@ public class Sandwich {
     private boolean toasted;
     private ArrayList<String> toppings;
     private ArrayList<String> list_sauces;
+
+    public Sandwich(String name, double price_sandwich) {
+        super(name, price_sandwich);
+    }
 }
