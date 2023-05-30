@@ -10,4 +10,20 @@ public class Person {
         this.name = name;
         this.receipt = receipt;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<Item> getReceipt() {
+        return receipt;
+    }
+
+    public void setReceipt(ArrayList<Item> receipt) {
+        this.receipt = receipt;
+    }
 }
