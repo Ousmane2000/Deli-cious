@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Sandwich extends Item {
-    private int size_sandwich;
-    private String type_of_bread;
+    private int sizeSandwich;
+    private String typeOfBread;
     private double price_sandwich;
     private String meat_topping;
     private String cheese_topping;
