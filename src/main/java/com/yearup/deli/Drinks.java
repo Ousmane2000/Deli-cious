@@ -9,7 +9,9 @@ public class Drinks extends Item{
         this.drink_name = name;
         this .drink_size = drink_size;
     }
+    public Drinks(){
 
+    }
     public String getDrink_size() {
         return drink_size;
     }

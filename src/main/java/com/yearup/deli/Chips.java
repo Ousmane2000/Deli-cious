@@ -5,6 +5,9 @@ public class Chips extends Item{
     public Chips(String name){
         this.type_chips = name;
     }
+    public Chips(){
+
+    }
 
     public String getType_chips() {
         return type_chips;
