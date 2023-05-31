@@ -15,6 +15,10 @@ public class Main {
             String name = scanner.next();
             customer.setName(name);
             customer.setReceipt();
+            customer.addItem(sandwich);
+            sandwich.setToasted(false);
+            sandwich.setExtra_meat(false);
+            sandwich.setExtra_cheese(false);
             System.out.println("Hello " + name + " Choose an option: ");
             System.out.println("1) New Order");
             System.out.println("2) Exit");
@@ -69,7 +73,7 @@ public class Main {
                     checkout(scanner);
                     break;
 
-                case 5:
+                case 0:
                     running = false;
 
                 default:
@@ -88,7 +92,7 @@ public class Main {
             System.out.println("----- Choose an Option -----");
             System.out.println("1) Select Sandwich Size: ");
             System.out.println("2) Select Bread: ");
-            System.out.println("3) Select Toppings: ");
+            System.out.println("3) Select Meat Choice: ");
             System.out.println("4) Toasted? y/n");
 
             int input = scanner.nextInt();
@@ -103,12 +107,16 @@ public class Main {
                     break;
 
                 case 3:
-                    toppingOption(scanner);
+                    meatOption(scanner);
                     break;
 
                 case 4:
-                    running = false;
-
+                    System.out.println("Do you want your sandwich toasted? Y/N");
+                    String toasted = scanner.next();
+                    if(toasted.equalsIgnoreCase("y") || toasted.equalsIgnoreCase("yes")){
+                        sandwich.setToasted(true);
+                    }
+                    break;
                 default:
                     System.out.println("Invalid Option");
                     break;
@@ -171,52 +179,44 @@ public class Main {
         sandwich.setType_of_bread(option);
     }
 
-    private static void toppingOption(Scanner scanner) {
-        boolean running = true;
-        while (running) {
+    private static void meatOption(Scanner scanner) {
+        String meat = null;
             System.out.println("----- Enter Toppings of Choice -----");
             System.out.println("Which Meat Would You Like?");
             System.out.println("1) Steak");
             System.out.println("2) Ham");
             System.out.println("3) Salami");
-            System.out.println("4) Roast Beef");
-            System.out.println("5) Chicken");
-            System.out.println("6) Bacon");
+            System.out.println("4) Bacon");
+            System.out.println("5) Roast Beef");
+            System.out.println("6) Chicken");
 
             int input = scanner.nextInt();
 
             switch (input) {
                 case 1:
-                    sandwichSizeOption(scanner);
+                    meat = "Steak";
                     break;
-
                 case 2:
-                    breadOption(scanner);
+                    meat = "Ham";
                     break;
-
                 case 3:
-                    toppingOption(scanner);
+                    meat = "Salami";
                     break;
-
                 case 4:
-                    running = false;
-
+                    meat = "Bacon";
+                    break;
+                case 5:
+                    meat = "Roast Beef";
+                    break;
+                case 6:
+                    meat ="Chicken";
+                    break;
                 default:
                     System.out.println("Invalid Option");
                     break;
             }
-
-            String input1 = scanner.nextLine().trim();
-
-            if (input1.equals("4 inch")) {
-                System.out.println("Price: +$1.00");
-            } else if (input1.equals("8inch")) {
-                System.out.println("Price: +$2.00");
-            } else if (input1.equals("12inch")) {
-                System.out.println("Price: +$3.00");
-            }
-
-        }
+            System.out.println();
+            sandwich.setMeat_topping(meat);
     }
         private static void addDrink (Scanner scanner) {
             boolean exit = false;
@@ -229,6 +229,7 @@ public class Main {
                 System.out.println("3) Sprite");
                 System.out.println("4) Fanta");
                 System.out.println("5) Water");
+                System.out.println("0) Exit");
 
                 int selection = scanner.nextInt();
 
