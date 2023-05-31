@@ -33,11 +33,61 @@ public class Sandwich extends Item {
     private double EXTRA_CHEESE_PRICE_12 = 0.90;
 
 
-    public Sandwich(String name, double price_sandwich) {
-        super(name, price_sandwich);
+    public Sandwich(int sizeSandwich, String typeOfBread, double price_sandwich, String meat_topping, String cheese_topping, boolean extra_meat, boolean extra_cheese, boolean toasted) {
+        this.size_sandwich = sizeSandwich;
+        this.type_of_bread = typeOfBread;
+        this.price_sandwich = price_sandwich;
+        this.meat_topping = meat_topping;
+        this.cheese_topping = cheese_topping;
+        this.extra_meat = extra_meat;
+        this.extra_cheese = extra_cheese;
+        this.toasted = toasted;
+        this.toppings = new ArrayList<>();
+        this.list_sauces = new ArrayList<>();
+    }
+    public Sandwich(){
+        this.toppings = new ArrayList<>();
+        this.list_sauces = new ArrayList<>();
+    }
 
-        toppings = new ArrayList<>();
-        list_sauces = new ArrayList<>();
+    public void setSize_sandwich(int size_sandwich) {
+        this.size_sandwich = size_sandwich;
+    }
+
+    public void setType_of_bread(String type_of_bread) {
+        this.type_of_bread = type_of_bread;
+    }
+
+    public void setPrice_sandwich(double price_sandwich) {
+        this.price_sandwich = price_sandwich;
+    }
+
+    public void setMeat_topping(String meat_topping) {
+        this.meat_topping = meat_topping;
+    }
+
+    public void setCheese_topping(String cheese_topping) {
+        this.cheese_topping = cheese_topping;
+    }
+
+    public void setExtra_meat(boolean extra_meat) {
+        this.extra_meat = extra_meat;
+    }
+
+    public void setExtra_cheese(boolean extra_cheese) {
+        this.extra_cheese = extra_cheese;
+    }
+
+    public void setToasted(boolean toasted) {
+        this.toasted = toasted;
+    }
+
+    public void setToppings(ArrayList<String> toppings) {
+        this.toppings = toppings;
+    }
+
+    public void setList_sauces(ArrayList<String> list_sauces) {
+        this.list_sauces = list_sauces;
     }
 
     public int getSize_sandwich() {
@@ -114,7 +164,7 @@ public class Sandwich extends Item {
                 toppings.contains("swiss")) & size_sandwich == 4 ) {
             price += CHEESE_PRICE_4;
         }
-        if((extra_meat = true) & (size_sandwich == 4)) {
+        if((extra_meat) & (size_sandwich == 4)) {
             price += EXTRA_MEAT_PRICE_4;
         }
         if ((toppings.contains("steak") || toppings.contains("ham") || toppings.contains("salami") ||
@@ -126,7 +176,7 @@ public class Sandwich extends Item {
                 toppings.contains("swiss")) & size_sandwich == 8 ) {
             price += CHEESE_PRICE_8;
         }
-        if((extra_meat = true) & (size_sandwich == 8)) {
+        if((extra_meat) & (size_sandwich == 8)) {
             price += EXTRA_MEAT_PRICE_8;
         }
         if ((toppings.contains("steak") || toppings.contains("ham") || toppings.contains("salami") ||

@@ -48,15 +48,12 @@ public class SandwichFileManager {
                     writer.write("---Chips: ");
                     writer.write(((Chips)item).getName());
                 }
-                total += item.getPrice();
+                total += item.calculatePrice();
             }
             writer.write("Total is: " + total );
             writer.close();
         }catch(IOException e){
             System.out.println("Couldn't make receipt");
         }
-    }
-    public static void main(String[] args) {
-
     }
 }
