@@ -8,8 +8,8 @@ public class Sandwich extends Item {
     private int size_sandwich;
     private String type_of_bread;
     private double price_sandwich;
-    private String meat_topping;
-    private String cheese_topping;
+    private ArrayList<String> meat_topping;
+    private ArrayList<String> cheese_topping;
     private boolean extra_meat;
     private boolean extra_cheese;
     private boolean toasted;
@@ -39,20 +39,21 @@ public class Sandwich extends Item {
         this.size_sandwich = sizeSandwich;
         this.type_of_bread = typeOfBread;
         this.price_sandwich = price_sandwich;
-        this.meat_topping = meat_topping;
-        this.cheese_topping = cheese_topping;
+        this.meat_topping = new ArrayList<>();
+        this.cheese_topping = new ArrayList<>();
         this.extra_meat = extra_meat;
         this.extra_cheese = extra_cheese;
         this.toasted = toasted;
         this.sauces_option = sauces_option;
         this.sides_option = sides_option;
-
         this.toppings = new ArrayList<>();
         this.list_sauces = new ArrayList<>();
     }
     public Sandwich(){
         this.toppings = new ArrayList<>();
         this.list_sauces = new ArrayList<>();
+        this.meat_topping = new ArrayList<>();
+        this.cheese_topping = new ArrayList<>();
     }
 
     public void setSize_sandwich(int size_sandwich) {
@@ -67,12 +68,12 @@ public class Sandwich extends Item {
         this.price_sandwich = price_sandwich;
     }
 
-    public void setMeat_topping(String meat_topping) {
-        this.meat_topping = meat_topping;
+    public void addMeat_topping(String meat) {
+        meat_topping.add(meat);
     }
 
-    public void setCheese_topping(String cheese_topping) {
-        this.cheese_topping = cheese_topping;
+    public void addCheese_topping(String cheese) {
+        cheese_topping.add(cheese);
     }
 
     public void setExtra_meat(boolean extra_meat) {
@@ -87,14 +88,6 @@ public class Sandwich extends Item {
         this.toasted = toasted;
     }
 
-    public void setToppings(ArrayList<String> toppings) {
-        this.toppings = toppings;
-    }
-
-    public void setList_sauces(ArrayList<String> list_sauces) {
-        this.list_sauces = list_sauces;
-    }
-
     public int getSize_sandwich() {
         return size_sandwich;
     }
@@ -107,11 +100,11 @@ public class Sandwich extends Item {
         return price_sandwich;
     }
 
-    public String getMeat_topping() {
+    public ArrayList<String> getMeat_topping() {
         return meat_topping;
     }
 
-    public String getCheese_topping() {
+    public ArrayList<String> getCheese_topping() {
         return cheese_topping;
     }
 

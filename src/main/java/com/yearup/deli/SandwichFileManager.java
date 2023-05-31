@@ -2,7 +2,6 @@ package com.yearup.deli;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -20,11 +19,15 @@ public class SandwichFileManager {
                     writer.write("---Sandwich: ");
                     writer.write(((Sandwich) item).getSize_sandwich() + " inch Sandwich");
                     writer.write(((Sandwich) item).getType_of_bread() + " Bread");
-                    writer.write(((Sandwich) item).getMeat_topping());
+                    for (int i = 0 ; i < ((Sandwich) item).getMeat_topping().size(); i++ ){
+                        writer.write(((Sandwich) item).getMeat_topping().get(i));
+                    }
                     if (((Sandwich) item).isExtra_meat()){
                         writer.write("w/ extra meat");
                     }
-                    writer.write(((Sandwich) item).getCheese_topping());
+                    for (int i = 0 ; i < ((Sandwich) item).getCheese_topping().size(); i++ ){
+                        writer.write(((Sandwich) item).getCheese_topping().get(i));
+                    }
                     if (((Sandwich) item).isExtra_cheese()){
                         writer.write("w/ extra cheese");
                     }
