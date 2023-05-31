@@ -6,9 +6,12 @@ public class Person {
     private String name;
     private ArrayList<Item> receipt;
 
-    public Person(String name, ArrayList<Item> receipt) {
+    public Person(String name) {
         this.name = name;
-        this.receipt = receipt;
+        this.receipt = new ArrayList<>();
+    }
+    public Person(){
+
     }
 
     public String getName() {
@@ -22,8 +25,10 @@ public class Person {
     public ArrayList<Item> getReceipt() {
         return receipt;
     }
-
-    public void setReceipt(ArrayList<Item> receipt) {
-        this.receipt = receipt;
+    public void addItem(Item item){
+        receipt.add(item);
+    }
+    public void setReceipt() {
+        this.receipt = new ArrayList<>();
     }
 }

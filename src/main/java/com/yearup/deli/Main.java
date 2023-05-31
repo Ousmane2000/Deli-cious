@@ -3,13 +3,20 @@ package com.yearup.deli;
 import java.util.Scanner;
 
 public class Main {
+    static Person customer = new Person();
+    static Sandwich sandwich = new Sandwich();
+    static Drinks drink = new Drinks();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
 
         while (running) {
             System.out.println("===== Welcome to the DELI-cious Home Screen =====");
-            System.out.println("Choose an option: ");
+            System.out.println("What is your name?");
+            String name = scanner.next();
+            customer.setName(name);
+            customer.setReceipt();
+            System.out.println("Hello " + name + "Choose an option: ");
             System.out.println("1) New Order");
             System.out.println("2) Exit");
 
@@ -112,15 +119,32 @@ public class Main {
     }
 
     private static void sandwichSizeOption(Scanner scanner) {
+        int option = 0;
         System.out.println("----- Enter Sandwich Size -----");
         System.out.println("1) 4 inch Price is: $5.50");
         System.out.println("2) 8 inch Price is: $7.00");
         System.out.println("3) 12 inch Price is: $8.50");
 
         int input = scanner.nextInt();
+        switch(input){
+            case 1:
+                option = 4;
+                break;
+            case 2:
+                option = 8;
+                break;
+            case 3:
+                option = 12;
+                break;
+            default:
+                System.out.println("The option you entered doesn't work");
+                break;
+        }
+        sandwich.setSize_sandwich(option);
     }
 
     private static void breadOption(Scanner scanner) {
+        String option = null;
         System.out.println("----- Enter Bread Type ----- ");
         System.out.println("1) White");
         System.out.println("2) Wheat");
@@ -128,6 +152,24 @@ public class Main {
         System.out.println("4) Wrap");
 
         int input = scanner.nextInt();
+        switch(input){
+            case 1:
+                option = "White";
+                break;
+            case 2:
+                option = "Wheat";
+                break;
+            case 3:
+                option = "Rye";
+                break;
+            case 4:
+                option = "Wrap";
+                break;
+            default:
+                System.out.println("The option you entered doesn't work");
+                break;
+        }
+        sandwich.setType_of_bread(option);
     }
 
     private static void toppingOption(Scanner scanner) {
@@ -254,16 +296,51 @@ public class Main {
 
 
 
-
-
         private static void addChips (Scanner scanner){
+            String name = null;
             boolean running = true;
             while (running) {
-                System.out.println("1) Select Chips Type:");
+                System.out.println("----- Select Chips -----");
+                System.out.println("1) Doritos");
+                System.out.println("2) Lays");
+                System.out.println("3) Cheetos");
+                System.out.println("4) Fritos");
+                System.out.println("5) Funyuns");
+                System.out.println("6) Ruffles");
+                System.out.println("7) Tostitos");
+                System.out.println("10) Exit");
 
-                String input = scanner.nextLine().trim();
+                int input = scanner.nextInt();
 
-
+                switch (input) {
+                    case 1:
+                        name = "Doritos";
+                        break;
+                    case 2:
+                        name = "Lays";
+                        break;
+                    case 3:
+                        name = "Cheetos";
+                        break;
+                    case 4:
+                        name = "Fritos";
+                        break;
+                    case 5:
+                        name = "Funyuns";
+                        break;
+                    case 6:
+                        name = "Ruffles";
+                        break;
+                    case 7:
+                        name = "Tostitos";
+                        break;
+                    case 10:
+                        break;
+                    default:
+                        System.out.println("This isn't an option");
+                }
+                Chips chip = new Chips(name);
+                customer.addItem(chip);
             }
         }
 
