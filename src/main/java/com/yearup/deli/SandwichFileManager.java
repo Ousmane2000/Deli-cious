@@ -56,7 +56,4 @@ public class SandwichFileManager {
             System.out.println("Couldn't make receipt");
         }
     }
-    public static void main(String[] args) {
-
-    }
 }
