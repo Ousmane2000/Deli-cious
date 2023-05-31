@@ -16,7 +16,7 @@ public class Main {
             String name = scanner.next();
             customer.setName(name);
             customer.setReceipt();
-            System.out.println("Hello " + name + "Choose an option: ");
+            System.out.println("Hello " + name + " Choose an option: ");
             System.out.println("1) New Order");
             System.out.println("2) Exit");
 
