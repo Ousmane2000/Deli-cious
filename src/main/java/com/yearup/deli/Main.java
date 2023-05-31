@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
     static Person customer = new Person();
     static Sandwich sandwich = new Sandwich();
-    static Drinks drink = new Drinks();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
@@ -219,8 +218,6 @@ public class Main {
 
         }
     }
-
-
         private static void addDrink (Scanner scanner) {
             boolean exit = false;
             String drinkSize = "";
@@ -240,35 +237,30 @@ public class Main {
                         drinkType = "Coca Cola";
                         System.out.print("Which size would you like (Small, Medium, Large)");
                         drinkSize = scanner.nextLine();
-                        drinkSize(drinkType, drinkSize);
                         break;
 
                     case 2:
                         drinkType = "Pepsi";
                         System.out.print("Which size would you like (Small, Medium, Large");
                         drinkSize = scanner.nextLine();
-                        drinkSize(drinkType, drinkSize);
                         break;
 
                     case 3:
                         drinkType = "Sprite";
                         System.out.print("Which size would you like (Small, Medium, Large");
                         drinkSize = scanner.nextLine();
-                        drinkSize(drinkType, drinkSize);
                         break;
 
                     case 4:
                         drinkType = "Fanta";
                         System.out.print("Which size would you like (Small, Medium, Large");
                         drinkSize = scanner.nextLine();
-                        drinkSize(drinkType, drinkSize);
                         break;
 
                     case 5:
                         drinkType = "Water";
                         System.out.print("Which size would you like (Small, Medium, Large");
                         drinkSize = scanner.nextLine();
-                        drinkSize(drinkType, drinkSize);
                         break;
 
                     case 0:
@@ -279,23 +271,10 @@ public class Main {
                         System.out.print("Invalid Option");
                         break;
                 }
+                Drinks drink = new Drinks(drinkType,drinkSize);
+                customer.addItem(drink);
             }
         }
-        private static void drinkSize(String drinkSize, String drinkType) {
-            if (drinkSize.equalsIgnoreCase("s")) {
-                System.out.println("Item Added");
-            } else if (drinkSize.equalsIgnoreCase("m")) {
-                System.out.println("Item Added");
-            } else if (drinkSize.equalsIgnoreCase("l")) {
-                System.out.println("Item Added");
-            } else {
-                System.out.println("Invalid Option");
-            }
-        }
-
-
-
-
         private static void addChips (Scanner scanner){
             String name = null;
             boolean running = true;
