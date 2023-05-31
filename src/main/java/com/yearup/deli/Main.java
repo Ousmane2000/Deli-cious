@@ -180,8 +180,10 @@ public class Main {
 
 
         private static void addDrink (Scanner scanner) {
-            boolean running = true;
-            while (running) {
+            boolean exit = false;
+            String drinkSize = "";
+            String drinkType = "";
+            while (!exit) {
                 System.out.println("----- Select Drinks -----");
                 System.out.println("1) Coca Cola");
                 System.out.println("2) Pepsi");
@@ -189,17 +191,68 @@ public class Main {
                 System.out.println("4) Fanta");
                 System.out.println("5) Water");
 
-                int input = scanner.nextInt();
                 int selection = scanner.nextInt();
 
                 switch (selection) {
                     case 1:
+                        drinkType = "Coca Cola";
+                        System.out.print("Which size would you like (Small, Medium, Large)");
+                        drinkSize = scanner.nextLine();
+                        drinkSize(drinkType, drinkSize);
+                        break;
 
+                    case 2:
+                        drinkType = "Pepsi";
+                        System.out.print("Which size would you like (Small, Medium, Large");
+                        drinkSize = scanner.nextLine();
+                        drinkSize(drinkType, drinkSize);
+                        break;
+
+                    case 3:
+                        drinkType = "Sprite";
+                        System.out.print("Which size would you like (Small, Medium, Large");
+                        drinkSize = scanner.nextLine();
+                        drinkSize(drinkType, drinkSize);
+                        break;
+
+                    case 4:
+                        drinkType = "Fanta";
+                        System.out.print("Which size would you like (Small, Medium, Large");
+                        drinkSize = scanner.nextLine();
+                        drinkSize(drinkType, drinkSize);
+                        break;
+
+                    case 5:
+                        drinkType = "Water";
+                        System.out.print("Which size would you like (Small, Medium, Large");
+                        drinkSize = scanner.nextLine();
+                        drinkSize(drinkType, drinkSize);
+                        break;
+
+                    case 0:
+                        System.out.print("Returning To Menu");
+                        break;
+
+                    default:
+                        System.out.print("Invalid Option");
+                        break;
                 }
-
-
             }
         }
+        private static void drinkSize(String drinkSize, String drinkType) {
+            if (drinkSize.equalsIgnoreCase("s")) {
+                System.out.println("Item Added");
+            } else if (drinkSize.equalsIgnoreCase("m")) {
+                System.out.println("Item Added");
+            } else if (drinkSize.equalsIgnoreCase("l")) {
+                System.out.println("Item Added");
+            } else {
+                System.out.println("Invalid Option");
+            }
+        }
+
+
+
 
 
 
