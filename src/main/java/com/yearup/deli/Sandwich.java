@@ -13,6 +13,8 @@ public class Sandwich extends Item {
     private boolean extra_meat;
     private boolean extra_cheese;
     private boolean toasted;
+    private String sides_option;
+    private String sauces_option;
     private ArrayList<String> toppings;
     private ArrayList<String> list_sauces;
 
@@ -33,7 +35,7 @@ public class Sandwich extends Item {
     private double EXTRA_CHEESE_PRICE_12 = 0.90;
 
 
-    public Sandwich(int sizeSandwich, String typeOfBread, double price_sandwich, String meat_topping, String cheese_topping, boolean extra_meat, boolean extra_cheese, boolean toasted) {
+    public Sandwich(int sizeSandwich, String typeOfBread, double price_sandwich, String meat_topping, String cheese_topping, boolean extra_meat, boolean extra_cheese, boolean toasted, String sauces_option, String sides_option) {
         this.size_sandwich = sizeSandwich;
         this.type_of_bread = typeOfBread;
         this.price_sandwich = price_sandwich;
@@ -42,6 +44,9 @@ public class Sandwich extends Item {
         this.extra_meat = extra_meat;
         this.extra_cheese = extra_cheese;
         this.toasted = toasted;
+        this.sauces_option = sauces_option;
+        this.sides_option = sides_option;
+
         this.toppings = new ArrayList<>();
         this.list_sauces = new ArrayList<>();
     }
@@ -130,6 +135,22 @@ public class Sandwich extends Item {
         return list_sauces;
     }
 
+    public String getSides_option() {
+        return sides_option;
+    }
+
+    public void setSides_option(String sides_option) {
+        this.sides_option = sides_option;
+    }
+
+    public String getSauces_option() {
+        return sauces_option;
+    }
+
+    public void setSauces_option(String sauces_option) {
+        this.sauces_option = sauces_option;
+    }
+
     public void addTopping(String topping) {
         toppings.add(topping);
     }
@@ -194,7 +215,6 @@ public class Sandwich extends Item {
 
         return price;
     }
-
 
 
 

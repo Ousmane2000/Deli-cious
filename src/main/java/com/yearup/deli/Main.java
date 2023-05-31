@@ -12,7 +12,7 @@ public class Main {
         while (running) {
             System.out.println("===== Welcome to the DELI-cious Home Screen =====");
             System.out.println("What is your name?");
-            String name = scanner.next();
+            String name = scanner.nextLine();
             customer.setName(name);
             customer.setReceipt();
             customer.addItem(sandwich);
@@ -51,7 +51,9 @@ public class Main {
             System.out.println("1) Add Sandwich");
             System.out.println("2) Add Drink");
             System.out.println("3) Add Chips");
-            System.out.println("4) Checkout");
+            System.out.println("4) add Sauces");
+            System.out.println("5) add Sides");
+            System.out.println("6) Checkout");
             System.out.println("0) Cancel Order");
 
             int input = scanner.nextInt();
@@ -68,8 +70,14 @@ public class Main {
                 case 3:
                     addChips(scanner);
                     break;
-
                 case 4:
+                    saucesOption(scanner);
+                    break;
+                case 5:
+                     sidesOption(scanner);
+                    break;
+
+                case 6:
                     checkout(scanner);
                     break;
 
@@ -177,6 +185,62 @@ public class Main {
                 break;
         }
         sandwich.setType_of_bread(option);
+    }
+    private static void saucesOption(Scanner scanner) {
+        String option = null;
+        System.out.println("----- Enter Sauce Type ----- ");
+        System.out.println("1) mayo");
+        System.out.println("2) mustard");
+        System.out.println("3) ketchup");
+        System.out.println("4) ranch");
+        System.out.println("5) thousand islands");
+        System.out.println("6) vinaigrette");
+
+        int input = scanner.nextInt();
+        switch(input){
+            case 1:
+                option = "mayo";
+                break;
+            case 2:
+                option = "mustard";
+                break;
+            case 3:
+                option = "ketchup";
+                break;
+            case 4:
+                option = "ranch";
+                break;
+            case 5:
+                option = "thousand islands";
+                break;
+            case 6:
+                option = "vinaigrette";
+                break;
+            default:
+                System.out.println("The option you entered doesn't work");
+                break;
+        }
+        sandwich.setSauces_option(option);
+    }
+    private static void sidesOption(Scanner scanner) {
+        String option = null;
+        System.out.println("----- Enter Sides Type ----- ");
+        System.out.println("1) au jus");
+        System.out.println("2) sauce");
+
+        int input = scanner.nextInt();
+        switch(input){
+            case 1:
+                option = "au jus";
+                break;
+            case 2:
+                option = "sauce";
+                break;
+            default:
+                System.out.println("The option you entered doesn't work");
+                break;
+        }
+        sandwich.setSides_option(option);
     }
 
     private static void meatOption(Scanner scanner) {
@@ -327,9 +391,6 @@ public class Main {
         private static void checkout (Scanner scanner){
             boolean running = true;
             while (running) {
-
-
-
 
 
             }
