@@ -150,7 +150,6 @@ public class Main {
                     break;
             }
         }
-        scanner.close();
     }
     private static void addToppings(Scanner scanner){
         boolean run = true;
@@ -489,6 +488,7 @@ public class Main {
                         name = "Tostitos";
                         break;
                     case 10:
+                        running = false;
                         break;
                     default:
                         System.out.println("This isn't an option");
