@@ -32,9 +32,8 @@ public class Drinks extends Item{
     @Override
     public String toString() {
 
-        return "Drinks{" +
-                "drink_size='" + drink_size + "\n" +
-                ", drink_name='" + drink_name + '\'' +
-                '}';
+        return "Drinks:" + "\n" +
+                "drink_size= " + drink_size + "\n" +
+                ", drink_name= " + drink_name ;
     }
 }

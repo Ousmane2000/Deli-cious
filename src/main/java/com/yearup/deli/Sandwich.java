@@ -212,7 +212,7 @@ public class Sandwich extends Item {
     @Override
     public String toString() {
 
-        return "Sandwich{" +
+        return "Sandwich{" + "\n" +
                 "size_sandwich=" + size_sandwich + "\n" +
                 ", type_of_bread='" + type_of_bread + '\'' + "\n" +
                 ", price_sandwich=" + price_sandwich + "\n" +

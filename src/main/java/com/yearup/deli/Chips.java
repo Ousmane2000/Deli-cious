@@ -21,8 +21,7 @@ public class Chips extends Item{
 
     @Override
     public String toString() {
-        return "Chips{" +
-                "type_chips='" + type_chips + '\'' +
-                '}';
+        return "Chips:" + "\n" +
+                "type_chips= " + type_chips ;
     }
 }

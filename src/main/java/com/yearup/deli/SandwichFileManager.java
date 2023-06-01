@@ -18,10 +18,10 @@ public class SandwichFileManager {
         try{
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(formattedDateTime + ".txt"));
-            writer.write("Receipt for " + name + ":");
+            writer.write("Receipt for " + name + ": \n ");
             for (Item item: receipt){
                 if(item instanceof Sandwich){
-                    writer.write("---Sandwich: ");
+                    writer.write("---Sandwich: \n ");
                     writer.write(String.valueOf(item));
                    /* writer.write(((Sandwich) item).getSize_sandwich() + " inch Sandwich");
                     writer.write(((Sandwich) item).getType_of_bread() + " Bread");
@@ -49,12 +49,12 @@ public class SandwichFileManager {
                     }*/
                 }
                 if (item instanceof Drinks){
-                    writer.write("---Drink: ");
+                    writer.write("---Drink: \n ");
                     writer.write(String.valueOf(item));
                     //writer.write(((Drinks)item).getDrink_size());
                 }
                 if (item instanceof Chips){
-                    writer.write("---Chips: ");
+                    writer.write("---Chips: \n ");
                     writer.write(String.valueOf(item));
                     //writer.write(((Chips)item).getName());
                 }

@@ -415,25 +415,25 @@ public class Main {
 
                     case 2:
                         drinkType = "Pepsi";
-                        System.out.print("Which size would you like (Small, Medium, Large");
+                        System.out.print("Which size would you like (Small, Medium, Large)");
                         drinkSize = scanner.next();
                         break;
 
                     case 3:
                         drinkType = "Sprite";
-                        System.out.print("Which size would you like (Small, Medium, Large");
+                        System.out.print("Which size would you like (Small, Medium, Large)");
                         drinkSize = scanner.next();
                         break;
 
                     case 4:
                         drinkType = "Fanta";
-                        System.out.print("Which size would you like (Small, Medium, Large");
+                        System.out.print("Which size would you like (Small, Medium, Large)");
                         drinkSize = scanner.next();
                         break;
 
                     case 5:
                         drinkType = "Water";
-                        System.out.print("Which size would you like (Small, Medium, Large");
+                        System.out.print("Which size would you like (Small, Medium, Large)");
                         drinkSize = scanner.next();
                         break;
 
