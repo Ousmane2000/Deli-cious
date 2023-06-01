@@ -22,6 +22,7 @@ public class SandwichFileManager {
             for (Item item: receipt){
                 if(item instanceof Sandwich){
                     writer.write(String.valueOf(item));
+                    writer.write("\n");
                 }
                 if (item instanceof Drinks){
                     writer.write(String.valueOf(item));
