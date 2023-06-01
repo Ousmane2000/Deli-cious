@@ -18,7 +18,7 @@ public class Main {
             customer.setReceipt();
             System.out.println("Hello " + name + " Choose an option: ");
             System.out.println("1) New Order");
-            System.out.println("2) Exit");
+            System.out.println("0) Exit");
 
             int input = scanner.nextInt();
 
@@ -27,7 +27,7 @@ public class Main {
                     newOrder(scanner);
                     break;
 
-                case 2:
+                case 0:
                     running = false;
                     break;
 
@@ -74,7 +74,7 @@ public class Main {
 
                 case 6:
                     checkout(scanner);
-                    break;
+                    return;
 
                 case 0:
                     running = false;
@@ -102,7 +102,7 @@ public class Main {
             System.out.println("4) Toasted ");
             System.out.println("5) Cheese ");
             System.out.println("6) Add Toppings ");
-            System.out.println("7) Exit");
+            System.out.println("0) Exit");
 
             int input = scanner.nextInt();
 
@@ -142,7 +142,7 @@ public class Main {
                 case 6:
                     addToppings(scanner);
                     break;
-                case 7:
+                case 0:
                     running = false;
                     break;
                 default:
@@ -164,7 +164,7 @@ public class Main {
         System.out.println("7) Pickles");
         System.out.println("8) Guacamole");
         System.out.println("9) Mushrooms");
-        System.out.println("10) Exit");
+        System.out.println("0) Exit");
 
         int toppings = scanner.nextInt();
 
@@ -196,7 +196,7 @@ public class Main {
             case 9:
                 sandwich.addTopping("Mushrooms");
                 break;
-            case 10:
+            case 0:
                 run = false;
                 break;
             default:
@@ -213,7 +213,7 @@ public class Main {
             System.out.println("2) Provolone");
             System.out.println("3) Cheddar");
             System.out.println("4) Swiss");
-            System.out.println("5) Exit");
+            System.out.println("0) Exit");
 
             int selection = scanner.nextInt();
 
@@ -230,7 +230,7 @@ public class Main {
                 case 4:
                     cheese = "Swiss";
                     break;
-                case 5:
+                case 0:
                     run = false;
                     break;
                 default:
@@ -359,7 +359,7 @@ public class Main {
             System.out.println("4) Bacon");
             System.out.println("5) Roast Beef");
             System.out.println("6) Chicken");
-            System.out.println("7) Exit");
+            System.out.println("0) Exit");
 
             int input = scanner.nextInt();
 
@@ -382,7 +382,7 @@ public class Main {
                 case 6:
                     meat = "Chicken";
                     break;
-                case 7:
+                case 0:
                     run = false;
                     break;
                 default:
@@ -461,7 +461,7 @@ public class Main {
                 System.out.println("5) Funyuns");
                 System.out.println("6) Ruffles");
                 System.out.println("7) Tostitos");
-                System.out.println("10) Exit");
+                System.out.println("0) Exit");
 
                 int input = scanner.nextInt();
 
@@ -487,7 +487,7 @@ public class Main {
                     case 7:
                         name = "Tostitos";
                         break;
-                    case 10:
+                    case 0:
                         running = false;
                         break;
                     default:
@@ -520,9 +520,9 @@ public class Main {
                 System.out.println("The amount owed is " + owed);
                 payment = scanner.nextDouble();
                 if (payment >= owed) {
-                    System.out.println("You have payed the correct amount, you have " + (payment + owed) + " in change, Enjoy and come again");
+                    System.out.println("You have payed the correct amount, you have " + (payment - owed) + " in change, Enjoy and come again");
                     receipt.saveOrder(customer.getName(), customer.getReceipt());
-                    break;
+                    return;
                 }
                 if(payment < owed){
                     System.out.println("Payment unsuccessful, please try again");
