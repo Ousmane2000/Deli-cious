@@ -209,7 +209,21 @@ public class Sandwich extends Item {
         return price;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "Sandwich{" +
+                "size_sandwich=" + size_sandwich +
+                ", type_of_bread='" + type_of_bread + '\'' +
+                ", price_sandwich=" + price_sandwich +
+                ", meat_topping=" + meat_topping +
+                ", cheese_topping=" + cheese_topping +
+                ", extra_meat=" + extra_meat +
+                ", extra_cheese=" + extra_cheese +
+                ", toasted=" + toasted +
+                ", sides_option='" + sides_option + '\'' +
+                ", sauces_option='" + sauces_option + '\'' +
+                ", toppings=" + toppings +
+                ", list_sauces=" + list_sauces +
+                '}';
+    }
 }

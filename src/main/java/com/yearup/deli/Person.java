@@ -31,4 +31,11 @@ public class Person {
     public void setReceipt() {
         this.receipt = new ArrayList<>();
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

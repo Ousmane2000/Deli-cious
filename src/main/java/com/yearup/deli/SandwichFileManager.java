@@ -7,7 +7,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class SandwichFileManager {
-    public void saveOrder(Person name,ArrayList<Item> receipt) {
+    public void saveOrder(String name,ArrayList<Item> receipt) {
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
         double total = 0;
