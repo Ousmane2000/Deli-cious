@@ -33,7 +33,7 @@ public class SandwichFileManager {
                 }
                 total += item.calculatePrice();
             }
-            writer.write("Total is: " + total );
+            writer.write("Total is: $" + total );
             writer.close();
         }catch(IOException e){
             System.out.println("Couldn't make receipt");

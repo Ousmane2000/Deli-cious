@@ -1,0 +1,5 @@
+Receipt for : 
+ Drinks:
+drink_size= Large
+drink_name= Pepsi
+Total is: 3.0

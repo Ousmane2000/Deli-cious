@@ -77,7 +77,9 @@ public class Main {
                     return;
 
                 case 0:
+                    System.out.println("Order Canceled!");
                     running = false;
+                    break;
 
                 default:
                     System.out.println("Invalid Option");
@@ -86,7 +88,7 @@ public class Main {
             }
 
         }
-        scanner.close();
+
     }
     private static void addSandwich(Scanner scanner) {
         customer.addItem(sandwich);
@@ -517,10 +519,10 @@ public class Main {
             }
 
             do {
-                System.out.println("The amount owed is " + owed);
+                System.out.println("The amount owed is $" + owed);
                 payment = scanner.nextDouble();
                 if (payment >= owed) {
-                    System.out.println("You have payed the correct amount, you have " + (payment - owed) + " in change, Enjoy and come again");
+                    System.out.println("You have payed the correct amount, you have $" + (payment - owed) + " in change, Enjoy and come again");
                     receipt.saveOrder(customer.getName(), customer.getReceipt());
                     return;
                 }
