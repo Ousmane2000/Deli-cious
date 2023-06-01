@@ -21,19 +21,17 @@ public class SandwichFileManager {
             writer.write("Receipt for " + name + ": \n ");
             for (Item item: receipt){
                 if(item instanceof Sandwich){
-                    writer.write("---Sandwich: \n ");
                     writer.write(String.valueOf(item));
                 }
                 if (item instanceof Drinks){
-                    writer.write("---Drink: \n ");
                     writer.write(String.valueOf(item));
+                    writer.write("\n");
                 }
                 if (item instanceof Chips){
-                    writer.write("---Chips: \n ");
                     writer.write(String.valueOf(item));
+                    writer.write("\n");
                 }
                 total += item.calculatePrice();
-                writer.write("/n");
             }
             writer.write("Total is: " + total );
             writer.close();
