@@ -410,31 +410,31 @@ public class Main {
                     case 1:
                         drinkType = "Coca Cola";
                         System.out.print("Which size would you like (Small, Medium, Large)");
-                        drinkSize = scanner.nextLine();
+                        drinkSize = scanner.next();
                         break;
 
                     case 2:
                         drinkType = "Pepsi";
                         System.out.print("Which size would you like (Small, Medium, Large");
-                        drinkSize = scanner.nextLine();
+                        drinkSize = scanner.next();
                         break;
 
                     case 3:
                         drinkType = "Sprite";
                         System.out.print("Which size would you like (Small, Medium, Large");
-                        drinkSize = scanner.nextLine();
+                        drinkSize = scanner.next();
                         break;
 
                     case 4:
                         drinkType = "Fanta";
                         System.out.print("Which size would you like (Small, Medium, Large");
-                        drinkSize = scanner.nextLine();
+                        drinkSize = scanner.next();
                         break;
 
                     case 5:
                         drinkType = "Water";
                         System.out.print("Which size would you like (Small, Medium, Large");
-                        drinkSize = scanner.nextLine();
+                        drinkSize = scanner.next();
                         break;
 
                     case 0:
@@ -512,7 +512,7 @@ public class Main {
                 }
                 if(items instanceof Chips){
                     System.out.println(items);
-                    owed += items.calculatePrice();
+                    owed += ((Chips)items).calculatePrice();
                 }
             }
 

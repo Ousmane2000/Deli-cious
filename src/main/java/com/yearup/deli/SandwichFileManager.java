@@ -2,18 +2,22 @@ package com.yearup.deli;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class SandwichFileManager {
     public void saveOrder(String name,ArrayList<Item> receipt) {
-        LocalDate date = LocalDate.now();
-        LocalTime time = LocalTime.now();
+        Date currentDate = new Date();
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmmss");
+        String formattedDateTime = dateFormat.format(currentDate);
         double total = 0;
         try{
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter(date + "-" + time+ ".txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(formattedDateTime + ".txt"));
             writer.write("Receipt for " + name + ":");
             for (Item item: receipt){
                 if(item instanceof Sandwich){
