@@ -219,7 +219,6 @@ public class Sandwich extends Item {
                 "extra meat = " + extra_meat + "\n" +
                 "extra cheese = " + extra_cheese + "\n" +
                 "toasted = " + toasted + "\n" +
-                "sides = " + sides_option + "\n" +
                 "toppings = " + toppings + "\n" +
                 "list_sauces = " + list_sauces;
     }
