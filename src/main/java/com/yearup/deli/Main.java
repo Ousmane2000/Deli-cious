@@ -104,6 +104,8 @@ public class Main {
             System.out.println("4) Toasted ");
             System.out.println("5) Cheese ");
             System.out.println("6) Add Toppings ");
+           
+
 
             int input = scanner.nextInt();
 
@@ -143,6 +145,7 @@ public class Main {
                 case 6:
                     addToppings(scanner);
                     break;
+
                 default:
                     System.out.println("Invalid Option");
                     break;
