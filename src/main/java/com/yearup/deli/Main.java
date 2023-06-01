@@ -16,10 +16,6 @@ public class Main {
             String name = scanner.nextLine();
             customer.setName(name);
             customer.setReceipt();
-            customer.addItem(sandwich);
-            sandwich.setToasted(false);
-            sandwich.setExtra_meat(false);
-            sandwich.setExtra_cheese(false);
             System.out.println("Hello " + name + " Choose an option: ");
             System.out.println("1) New Order");
             System.out.println("2) Exit");
@@ -93,6 +89,10 @@ public class Main {
         scanner.close();
     }
     private static void addSandwich(Scanner scanner) {
+        customer.addItem(sandwich);
+        sandwich.setToasted(false);
+        sandwich.setExtra_meat(false);
+        sandwich.setExtra_cheese(false);
         boolean running = true;
         while (running) {
             System.out.println("----- Choose an Option -----");
