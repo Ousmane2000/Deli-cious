@@ -150,7 +150,6 @@ public class Main {
                     break;
             }
         }
-        scanner.close();
     }
     private static void addToppings(Scanner scanner){
         boolean run = true;
