@@ -520,6 +520,7 @@ public class Main {
 
             do {
                 System.out.println("The amount owed is $" + owed);
+                System.out.println("Enter amount: ");
                 payment = scanner.nextDouble();
                 if (payment >= owed) {
                     System.out.println("You have payed the correct amount, you have $" + (payment - owed) + " in change, Enjoy and come again");
