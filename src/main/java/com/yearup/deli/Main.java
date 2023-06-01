@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
     static Person customer = new Person();
     static Sandwich sandwich = new Sandwich();
+    static SandwichFileManager receipt = new SandwichFileManager();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
@@ -41,8 +42,6 @@ public class Main {
         }
         scanner.close();
     }
-
-
     private static void newOrder(Scanner scanner) {
         boolean running = true;
         while (running) {
@@ -51,8 +50,8 @@ public class Main {
             System.out.println("1) Add Sandwich");
             System.out.println("2) Add Drink");
             System.out.println("3) Add Chips");
-            System.out.println("4) add Sauces");
-            System.out.println("5) add Sides");
+            System.out.println("4) Add Sauces");
+            System.out.println("5) Add Sides");
             System.out.println("6) Checkout");
             System.out.println("0) Cancel Order");
 
@@ -93,7 +92,6 @@ public class Main {
         }
         scanner.close();
     }
-
     private static void addSandwich(Scanner scanner) {
         boolean running = true;
         while (running) {
@@ -104,8 +102,7 @@ public class Main {
             System.out.println("4) Toasted ");
             System.out.println("5) Cheese ");
             System.out.println("6) Add Toppings ");
-           
-
+            System.out.println("7) Exit");
 
             int input = scanner.nextInt();
 
@@ -145,7 +142,9 @@ public class Main {
                 case 6:
                     addToppings(scanner);
                     break;
-
+                case 7:
+                    running = false;
+                    break;
                 default:
                     System.out.println("Invalid Option");
                     break;
@@ -206,7 +205,6 @@ public class Main {
             }
         }
     }
-
     private static void addCheese(Scanner scanner) {
         String cheese = null;
         boolean run = true;
@@ -266,7 +264,6 @@ public class Main {
         }
         sandwich.setSize_sandwich(option);
     }
-
     private static void breadOption(Scanner scanner) {
         String option = null;
         System.out.println("----- Enter Bread Type ----- ");
@@ -351,7 +348,6 @@ public class Main {
         }
         sandwich.setSides_option(option);
     }
-
     private static void meatOption(Scanner scanner) {
         String meat = null;
         boolean run = true;
@@ -502,13 +498,35 @@ public class Main {
             }
         }
 
-        private static void checkout (Scanner scanner){
-            boolean running = true;
-            while (running) {
-
-
+        private static void checkout (Scanner scanner) {
+        double owed = 0.0;
+        double payment;
+            for(Item items: customer.getReceipt()){
+                if(items instanceof Sandwich){
+                    System.out.println(items);
+                    owed += items.calculatePrice();
+                }
+                if(items instanceof Drinks){
+                    System.out.println(items);
+                    owed += items.calculatePrice();
+                }
+                if(items instanceof Chips){
+                    System.out.println(items);
+                    owed += items.calculatePrice();
+                }
             }
-
+            do {
+                System.out.println("The amount owed is " + owed);
+                payment = scanner.nextDouble();
+                if (payment >= owed) {
+                    System.out.println("You have payed the correct amount, you have " + (payment + owed) + " in change, Enjoy and come again");
+                    receipt.saveOrder(customer.getName(), customer.getReceipt());
+                    break;
+                }
+                if(payment < owed){
+                    System.out.println("Payment unsuccessful, please try again");
+                }
+            }while(payment < owed);
 
         }
     }

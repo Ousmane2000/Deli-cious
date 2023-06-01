@@ -17,4 +17,11 @@ public class Chips extends Item{
     public double calculatePrice() {
         return 1.50;
     }
+
+    @Override
+    public String toString() {
+        return "Chips{" +
+                "type_chips='" + type_chips + '\'' +
+                '}';
+    }
 }
