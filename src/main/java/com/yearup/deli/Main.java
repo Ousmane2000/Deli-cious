@@ -445,9 +445,9 @@ public class Main {
                     default:
                         System.out.print("Invalid Option");
                 }
-                Drinks drink = new Drinks(drinkType,drinkSize);
-                customer.addItem(drink);
             }
+            Drinks drink = new Drinks(drinkType,drinkSize);
+            customer.addItem(drink);
         }
         private static void addChips (Scanner scanner){
             String name = null;
@@ -493,9 +493,9 @@ public class Main {
                     default:
                         System.out.println("This isn't an option");
                 }
-                Chips chip = new Chips(name);
-                customer.addItem(chip);
             }
+            Chips chip = new Chips(name);
+            customer.addItem(chip);
         }
 
         private static void checkout (Scanner scanner) {
