@@ -34,6 +34,6 @@ public class Drinks extends Item{
 
         return "Drinks:" + "\n" +
                 "drink_size= " + drink_size + "\n" +
-                ", drink_name= " + drink_name ;
+                "drink_name= " + drink_name ;
     }
 }

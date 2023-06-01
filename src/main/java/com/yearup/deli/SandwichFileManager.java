@@ -23,42 +23,17 @@ public class SandwichFileManager {
                 if(item instanceof Sandwich){
                     writer.write("---Sandwich: \n ");
                     writer.write(String.valueOf(item));
-                   /* writer.write(((Sandwich) item).getSize_sandwich() + " inch Sandwich");
-                    writer.write(((Sandwich) item).getType_of_bread() + " Bread");
-                    for (int i = 0 ; i < ((Sandwich) item).getMeat_topping().size(); i++ ){
-                        writer.write(((Sandwich) item).getMeat_topping().get(i));
-                    }
-                    if (((Sandwich) item).isExtra_meat()){
-                        writer.write("w/ extra meat");
-                    }
-                    for (int i = 0 ; i < ((Sandwich) item).getCheese_topping().size(); i++ ){
-                        writer.write(((Sandwich) item).getCheese_topping().get(i));
-                    }
-                    if (((Sandwich) item).isExtra_cheese()){
-                        writer.write("w/ extra cheese");
-                    }
-                    if (((Sandwich) item).isToasted()){
-                        writer.write("toasted");
-                    }
-                    writer.write(((Sandwich) item).getSize_sandwich());
-                    for(String toppings: ((Sandwich) item).getToppings()){
-                        writer.write(toppings + "\n");
-                    }
-                    for(String sauces: ((Sandwich) item).getList_sauces()){
-                        writer.write(sauces + "\n");
-                    }*/
                 }
                 if (item instanceof Drinks){
                     writer.write("---Drink: \n ");
                     writer.write(String.valueOf(item));
-                    //writer.write(((Drinks)item).getDrink_size());
                 }
                 if (item instanceof Chips){
                     writer.write("---Chips: \n ");
                     writer.write(String.valueOf(item));
-                    //writer.write(((Chips)item).getName());
                 }
                 total += item.calculatePrice();
+                writer.write("/n");
             }
             writer.write("Total is: " + total );
             writer.close();
