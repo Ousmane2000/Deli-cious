@@ -15,6 +15,7 @@ public class Chips extends Item{
 
     @Override
     public double calculatePrice() {
+
         return 1.50;
     }
 

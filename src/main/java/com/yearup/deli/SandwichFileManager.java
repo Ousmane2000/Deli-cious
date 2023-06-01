@@ -12,6 +12,7 @@ public class SandwichFileManager {
         LocalTime time = LocalTime.now();
         double total = 0;
         try{
+
             BufferedWriter writer = new BufferedWriter(new FileWriter(date + "-" + time+ ".txt"));
             writer.write("Receipt for " + name + ":");
             for (Item item: receipt){

@@ -515,6 +515,7 @@ public class Main {
                     owed += items.calculatePrice();
                 }
             }
+
             do {
                 System.out.println("The amount owed is " + owed);
                 payment = scanner.nextDouble();

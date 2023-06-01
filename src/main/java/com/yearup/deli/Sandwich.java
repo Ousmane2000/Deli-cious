@@ -211,6 +211,7 @@ public class Sandwich extends Item {
 
     @Override
     public String toString() {
+
         return "Sandwich{" +
                 "size_sandwich=" + size_sandwich +
                 ", type_of_bread='" + type_of_bread + '\'' +
