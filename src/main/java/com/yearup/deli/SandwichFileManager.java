@@ -17,7 +17,8 @@ public class SandwichFileManager {
             for (Item item: receipt){
                 if(item instanceof Sandwich){
                     writer.write("---Sandwich: ");
-                    writer.write(((Sandwich) item).getSize_sandwich() + " inch Sandwich");
+                    writer.write(String.valueOf(item));
+                   /* writer.write(((Sandwich) item).getSize_sandwich() + " inch Sandwich");
                     writer.write(((Sandwich) item).getType_of_bread() + " Bread");
                     for (int i = 0 ; i < ((Sandwich) item).getMeat_topping().size(); i++ ){
                         writer.write(((Sandwich) item).getMeat_topping().get(i));
@@ -40,16 +41,17 @@ public class SandwichFileManager {
                     }
                     for(String sauces: ((Sandwich) item).getList_sauces()){
                         writer.write(sauces + "\n");
-                    }
+                    }*/
                 }
                 if (item instanceof Drinks){
                     writer.write("---Drink: ");
-                    writer.write(((Drinks)item).getName());
-                    writer.write(((Drinks)item).getDrink_size());
+                    writer.write(String.valueOf(item));
+                    //writer.write(((Drinks)item).getDrink_size());
                 }
                 if (item instanceof Chips){
                     writer.write("---Chips: ");
-                    writer.write(((Chips)item).getName());
+                    writer.write(String.valueOf(item));
+                    //writer.write(((Chips)item).getName());
                 }
                 total += item.calculatePrice();
             }
