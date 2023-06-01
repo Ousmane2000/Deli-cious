@@ -33,7 +33,7 @@ public class Drinks extends Item{
     public String toString() {
 
         return "Drinks:" + "\n" +
-                "drink_size= " + drink_size + "\n" +
-                "drink_name= " + drink_name ;
+                "size = " + drink_size + "\n" +
+                "name = " + drink_name ;
     }
 }

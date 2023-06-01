@@ -211,19 +211,16 @@ public class Sandwich extends Item {
 
     @Override
     public String toString() {
-
         return "Sandwich:" + "\n" +
-                "size_sandwich=" + size_sandwich + "\n" +
-                "type_of_bread='" + type_of_bread + '\'' + "\n" +
-                "price_sandwich=" + price_sandwich + "\n" +
-                "meat_topping=" + meat_topping + "\n" +
-                "cheese_topping=" + cheese_topping + "\n" +
-                "extra_meat=" + extra_meat + "\n" +
-                "extra_cheese=" + extra_cheese + "\n" +
-                "toasted=" + toasted + "\n" +
-                "sides_option='" + sides_option + "\n" +
-                "sauces_option='" + sauces_option  + "\n" +
-                "toppings=" + toppings + "\n" +
-                "list_sauces=" + list_sauces;
+                "size = " + size_sandwich + "\n" +
+                "type of bread = " + type_of_bread + '\'' + "\n" +
+                "meat = " + meat_topping + "\n" +
+                "cheese = " + cheese_topping + "\n" +
+                "extra meat = " + extra_meat + "\n" +
+                "extra cheese = " + extra_cheese + "\n" +
+                "toasted = " + toasted + "\n" +
+                "sides = " + sides_option + "\n" +
+                "toppings = " + toppings + "\n" +
+                "list_sauces = " + list_sauces;
     }
 }
